@@ -18,86 +18,86 @@ st.write("---")
 ################################################################################
 ### Display text ###
 ################################################################################
-# st.write("# This is a major section")  # use markdown to create headers and sub headers
-# st.write("## This is subsection 1")
-# st.write("* Here is content for subsection 1")
-# st.write("## This is subsection 2")
-# st.write("* Here is content for subsection 2")
-# st.write("### This is sub-subsection 2") # you can play around by adding more sub-sections
-# st.write("Here other content")
-# st.info("* This is made with st.info()") # Display a text with informational style.
-# st.success("* This is made with st.success()") # Display a text with success style.
-# st.warning("* This is made with st.warning()") # Display a text with warning style.
-# st.error("* This is made with st.error()") # Display a text with error style.
-# st.write("---")  # creates a horizontal line, useful to separate the content in the page
+st.write("# This is a major section")  # use markdown to create headers and sub headers
+st.write("## This is subsection 1")
+st.write("* Here is content for subsection 1")
+st.write("## This is subsection 2")
+st.write("* Here is content for subsection 2")
+st.write("### This is sub-subsection 2") # you can play around by adding more sub-sections
+st.write("Here other content")
+st.info("* This is made with st.info()") # Display a text with informational style.
+st.success("* This is made with st.success()") # Display a text with success style.
+st.warning("* This is made with st.warning()") # Display a text with warning style.
+st.error("* This is made with st.error()") # Display a text with error style.
+st.write("---")  # creates a horizontal line, useful to separate the content in the page
 
 
 
-################################################################################
-### Display data ###
-################################################################################
-###### We will generate some data
+###############################################################################
+## Display data ###
+###############################################################################
+##### We will generate some data
 
-# my_list = [10,50,409] # Python list
-# my_dict = {'Number':[1,2,3], 'Color': ['Blue', 'Yellow', 'Green']} # python dictionary
+my_list = [10,50,409] # Python list
+my_dict = {'Number':[1,2,3], 'Color': ['Blue', 'Yellow', 'Green']} # python dictionary
 
-##### we will use pandas and numpy to generate a DataFrame. 
-##### For now, think of a DataFrame as a table with columns, rows and data.
-# import numpy as np
-# import pandas as pd 
-# np.random.seed(1)
-# df = pd.DataFrame(data={"Col1":np.random.randint(low=-100,high=100,size=10),
-#                         "Col2":np.random.randint(low=25,high=80,size=10)
-#                         })
+#### we will use pandas and numpy to generate a DataFrame. 
+#### For now, think of a DataFrame as a table with columns, rows and data.
+import numpy as np
+import pandas as pd 
+np.random.seed(1)
+df = pd.DataFrame(data={"Col1":np.random.randint(low=-100,high=100,size=10),
+                        "Col2":np.random.randint(low=25,high=80,size=10)
+                        })
 
-# st.write("This is a list")
-# st.write(my_list)
-# st.write("This is a dict")
-# st.write(my_dict)
-# st.write("This is a DataFrame")
-# st.write(df)
-# st.write("Alternatively, you can display a DataFrame using st.table()")
-# st.table(df)
-# st.write('---')
-
-
+st.write("This is a list")
+st.write(my_list)
+st.write("This is a dict")
+st.write(my_dict)
+st.write("This is a DataFrame")
+st.write(df)
+st.write("Alternatively, you can display a DataFrame using st.table()")
+st.table(df)
+st.write('---')
 
 
 
 
-################################################################################
-### Display plots ###
-################################################################################
 
-##### We will use matplotlib, seaborn and plotly  for data visualization
-##### for now, we just need to understand the plotting capability
-##### the commands and their usability will come clear across the lessons and walkthrough project
-##### we will use a generated DataFrame
-# import numpy as np
-# import pandas as pd 
-# np.random.seed(1)
-# df = pd.DataFrame(data={"Col1":np.random.randint(low=-100,high=100,size=10),
-#                         "Col2":np.random.randint(low=25,high=80,size=10)
-#                         })
 
-#### and will plot the data
-# import matplotlib.pyplot as plt
-# import seaborn as sns  
-# st.write("* Plot with Matplotlib/Seaborn") # we create a figure and plot the data
-# sns.set_style("whitegrid")
-# fig, axes = plt.subplots()
-# sns.scatterplot(data=df, x='Col1', y='Col2', ax=axes)
-# st.pyplot(fig) # When you render a Matplotlib or Seaborn plot, you wil use st.pyplot()
-#                # for example, in a jupyter notebook, we render with plt.show()
-#                # don't worry; we will see that in more detail soon 
-# st.write("---")
+###############################################################################
+## Display plots ###
+###############################################################################
 
-# st.write("* This example uses Plotly - an interactive data visualization library")
-# import plotly.express as px
-# fig = px.scatter(data_frame=df, x='Col1', y='Col2',width=800,height=400)
-# st.plotly_chart(fig) # When you render a Plotly plot, you wil use st.plotly_chart()
-#                      # in a jupyter notebook, we render with plt.show() 
-# st.write("---")
+#### We will use matplotlib, seaborn and plotly  for data visualization
+#### for now, we just need to understand the plotting capability
+#### the commands and their usability will come clear across the lessons and walkthrough project
+#### we will use a generated DataFrame
+import numpy as np
+import pandas as pd 
+np.random.seed(1)
+df = pd.DataFrame(data={"Col1":np.random.randint(low=-100,high=100,size=10),
+                        "Col2":np.random.randint(low=25,high=80,size=10)
+                        })
+
+### and will plot the data
+import matplotlib.pyplot as plt
+import seaborn as sns  
+st.write("* Plot with Matplotlib/Seaborn") # we create a figure and plot the data
+sns.set_style("whitegrid")
+fig, axes = plt.subplots()
+sns.scatterplot(data=df, x='Col1', y='Col2', ax=axes)
+st.pyplot(fig) # When you render a Matplotlib or Seaborn plot, you wil use st.pyplot()
+               # for example, in a jupyter notebook, we render with plt.show()
+               # don't worry; we will see that in more detail soon 
+st.write("---")
+
+st.write("* This example uses Plotly - an interactive data visualization library")
+import plotly.express as px
+fig = px.scatter(data_frame=df, x='Col1', y='Col2',width=800,height=400)
+st.plotly_chart(fig) # When you render a Plotly plot, you wil use st.plotly_chart()
+                     # in a jupyter notebook, we render with plt.show() 
+st.write("---")
 
 
 
