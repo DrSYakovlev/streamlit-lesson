@@ -1,4 +1,4 @@
 import streamlit as st
 
 def page1_body():
-    st.write('This is Page 1 | 2')
+    st.write('This is Page 1')
